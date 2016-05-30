@@ -1,5 +1,6 @@
 # EECR  
-<a href='https://coveralls.io/github/arkdelkaos/EECR?branch=master'><img src='https://coveralls.io/repos/github/arkdelkaos/EECR/badge.svg?branch=master' alt='Coverage Status' /></a>  
+[![codecov](https://codecov.io/gh/arkdelkaos/EECR/branch/master/graph/badge.svg)](https://codecov.io/gh/arkdelkaos/EECR)
+
 
 Home/App para el clan **Elite España** de **Clash Royale**
 

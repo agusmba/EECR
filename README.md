@@ -4,13 +4,14 @@
 Home/App para el clan **Elite España** de **Clash Royale**
 
 ## TO-DO
-- [ ] Home  
-  - [ ] Chat Stream  
-  - [x] Admim System  
-    - [x] Deck Admin Editor
-  - [x] VIP System  
-- [x] Login/Signup w/Perfil  
-- [x] Deck Editor  
+- [ ] Home View
+- [ ] Login/Signup
+- [ ] User System
+  - [ ] User Perfil
+  - [ ] User Panel
+- [ ] Admin System
+  - [ ] Colider Panel
+  - [ ] Admin Panel  
 - [ ] Deck Ranking  
   - [ ] Top10 & MostUsed10  
   - [ ] +1 vote  
@@ -20,7 +21,7 @@ Home/App para el clan **Elite España** de **Clash Royale**
   - [ ] Editor
   - [ ] Top  
   - [ ] Achievements
-- [x] Tweeter Stream  
+- [ ] Tweeter Stream  
 - [ ] Retweet Bot  
 - [ ] Multilanguage  
 

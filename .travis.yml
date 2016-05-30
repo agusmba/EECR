@@ -10,8 +10,7 @@ before_script:
   - gem install sass
   - bower install
 services: mongodb
-before_install:
-  - pip install codecov
-
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 notifications:
   slack: eecr:6jvPRxT579QoiP7YW28iMc3V

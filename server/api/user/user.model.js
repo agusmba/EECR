@@ -1,6 +1,7 @@
 'use strict';
 
 import crypto from 'crypto';
+import config from '../../config/environment';
 import mongoose from 'mongoose';
 mongoose.Promise = require('bluebird');
 import {Schema} from 'mongoose';
@@ -39,7 +40,124 @@ var UserSchema = new Schema({
   facebook: {},
   twitter: {},
   google: {},
-  github: {}
+  github: {},
+
+  nick: String,
+  hash: String,
+  stats: {
+    copas: Number,
+    h_copas: Number,
+    h_temporada: Number,
+    temporada_ant: Number,
+    trofeos_leyenda: Number,
+    victorias: Number,
+    victorias_3c: Number,
+    donaciones_tot: Number,
+    nivel: Number,
+    arena: Number,
+  },
+  clan_hash: String,
+  telegram: String,
+  avisos: {
+  type: Number, default: 0,
+  min: 0, max: 10
+  },
+  ban: {
+  type: Boolean, default: 'false'
+  },
+  lista_negra: {
+  type: Boolean, default: 'false'
+  },
+  verificado: {
+  type: String, default: 'no',
+  enum: ['no','espera','si']
+  },
+  cambio_clan: {
+  tipo: {
+  type: String, default: 'usuario',
+  enum: ['usuario','sistema','colider']
+  },
+  activo: {
+  type: Boolean, default: false,
+  },
+  mensaje: String
+  },
+  notas: [{
+    usr: {
+      type: String, default: 'sistema',
+      enum: ['sistema','admin','colider']
+    },
+    tipo: {
+      type: String, default: 'sistema',
+      enum: config.tipoNota
+    },
+    fecha: {
+      type: Date, default: Date.now
+    },
+    texto: String
+  }],
+  fecha_reg: {
+      type: Date, default: Date.now
+  },
+  edad: Date,
+  sexo: {
+    type: String, default: 'x',
+    enum: ['x','h','m']
+  },
+  grado: {
+    type: String, default: 'invitado',
+    enum: config.grado
+  },
+  avatar: String,
+    favs_num: {
+      type: Number, default: 0
+  },
+  favs: [{
+    type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  }],
+  premios: [{
+    calidad: {
+      type: String,
+      enum: ['bronce','plata','oro']
+    },
+    fecha: {
+      type: Date, default: Date.now
+    },
+    nombre: String
+  }],
+  indice_ved3: {
+    v: {
+      type: Number, default: 0
+    },
+    e: {
+      type: Number, default: 0
+    },
+    d: {
+      type: Number, default: 0
+    },
+    3: {
+      type: Number, default: 0
+    }
+  },
+  n_posts: {
+    type: Number, default: 0
+  },
+  n_hilos: {
+    type: Number, default: 0
+  },
+  privados: [{
+    leido: {
+      type: Boolean, default: false
+    },
+    fecha: {
+      type: Date, default: Date.now
+    },
+    creador: String,
+    creador_id: {
+      type: mongoose.Schema.Types.ObjectId, ref: 'User'
+    },
+    mensaje: String
+  }]
 });
 
 /**
